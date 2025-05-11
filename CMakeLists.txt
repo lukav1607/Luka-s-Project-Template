@@ -14,7 +14,7 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(
     ${PROJECT_NAME}
-    
+    "src/core/main.cpp"
     "src/core/Utility.cpp"
     "src/core/Game.cpp"
     "src/audio/SoundManager.cpp")

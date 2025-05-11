@@ -1,6 +1,6 @@
-# Platformer Game
+# Game Name
 
-A side-scrolling Platformer game that I'm making in my spare time using C++ and SFML.
+Description
 
 ## 🎮 Gameplay Overview
 - 
@@ -20,7 +20,7 @@ To run the project locally:
 bash
 Copy
 Edit
-git clone https://github.com/lukav1607/Tetris.git
+git clone https://github.com/lukav1607/Repository-Name.git
 ```
 2. Open the project with Visual Studio (or your preferred IDE).
 3. Make sure you have SFML 3.0.0 installed and linked properly.

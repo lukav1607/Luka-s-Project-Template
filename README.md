@@ -27,7 +27,7 @@ git clone https://github.com/lukav1607/Repository-Name.git
 4. Build and run the project!
 
 ## 📜 License
-This project is for educational and portfolio purposes. Read full license [here](https://github.com/lukav1607/Tetris/blob/610ec8e3fd061e0b50d465e172697723f8fe17c2/LICENSE.md).
+This project is for educational and portfolio purposes (MIT License).
 
 ## Credits
 ### Audio

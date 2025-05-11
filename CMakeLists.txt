@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(CMakeSFMLProject LANGUAGES CXX)
+project("LVProjectTemplate" LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -12,6 +12,25 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp)
-target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+add_executable(
+    ${PROJECT_NAME}
+    
+    "src/core/Utility.cpp"
+    "src/core/Game.cpp"
+    "src/audio/SoundManager.cpp")
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+
+# Don't link SFML::Main on non-Windows platforms
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Main SFML::System SFML::Window SFML::Graphics SFML::Audio)
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE SFML::System SFML::Window SFML::Graphics SFML::Audio)
+endif()
+
+# target_compile_definitions(${PROJECT_NAME} PRIVATE SFML_STATIC)
+
+# Prevent console window on Windows (does not affect Debug mode)
+if(MSVC AND CMAKE_BUILD_TYPE STREQUAL "Release")
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        WIN32_EXECUTABLE TRUE)
+endif()

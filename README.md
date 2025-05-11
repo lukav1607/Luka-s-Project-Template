@@ -1,4 +1,4 @@
-# Game Name
+# Project Name
 
 Description
 
